@@ -24,4 +24,12 @@ sequenceDiagram
     activate server
     server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
     deactivate server
-    
+
+    Note right of browser: User enters a new note and clicks save
+
+    browser->>server: POST /new_note
+    activate server
+    server-->>browser: response
+    deactivate server
+
+    Note right of browser: Javascript updates the page with new note without reloading the page
